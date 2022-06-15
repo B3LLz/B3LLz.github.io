@@ -1,7 +1,7 @@
+theme: tale
 # Site settings
 title:          B3LLz
 description:    "Minimal Jekyll theme for storytellers"
-baseurl:        "/tale"
 url:            "https://B3LLz.github.io"
 
 # Google Analytics
