@@ -1,7 +1,7 @@
 # Site settings
 title:          B3LLz
 description:    "Minimal Jekyll theme for storytellers"
-url:            "https://chesterhow.github.io"
+#url:            "https://chesterhow.github.io"
 
 # Google Analytics
 google_analytics: UA—XXXXXXXX-X
