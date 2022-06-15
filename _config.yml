@@ -1,4 +1,3 @@
-theme: tale
 # Site settings
 title:          B3LLz
 description:    "Minimal Jekyll theme for storytellers"
@@ -23,6 +22,8 @@ sass:
   sass_dir:     _sass
   style:        compressed
 
+remote_theme: chesterhow/tale
+
 # Gems
 plugins:
   - jekyll-feed
@@ -39,3 +40,5 @@ exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
 
 # Disqus (Set to your disqus id)
 disqus:         jekyll-tale
+
+
