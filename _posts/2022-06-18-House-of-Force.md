@@ -40,7 +40,7 @@ if ((unsigned long) (size) >= (unsigned long) (nb + MINSIZE))
 2. Top Chunk의 크기가  `nb + MINSIZE` (요청받은 Chunk의 크기 + Chunk의 최소 크기)보다 크거나 같은지 검사한다.
 3. Top Chunk의 크기`size`에서 `nb`를 빼준 값을 `remainder_size`에 저장한다.
 4. `**chunk_at_offset` 매크로를 통해 반환된 값을 `remainder` 에 저장한다. `chunk_at_offset` 매크로는 아래와같이 정의되어 있다.**
-    
+   
     ```c
     #define chunk_at_offset(p, s)  ((mchunkptr) (((char *) (p)) + (s)))
     ```
@@ -53,7 +53,7 @@ if ((unsigned long) (size) >= (unsigned long) (nb + MINSIZE))
 # House of Force Attack Flow
 
 1. `malloc()`으로 힙 영역에 메모리를 할당한다.
-    
+   
     ![hof1](/images/hof1.png)
     
 2. Top Chunk의 size 값을 `0xffffffff`(32bit)나  `0xffffffffffffffff`(64bit) 값으로 덮어쓴다.
@@ -62,7 +62,7 @@ if ((unsigned long) (size) >= (unsigned long) (nb + MINSIZE))
     ![hof2](/images/hof2.png)
     
 3. 원하는 주소를 할당 받기 위해 아래의 값을 `malloc()` 인자로 전달한다.
-    
+   
     [`할당 받고자하는 메모리 주소 - Chunk header size - Top Chunk addr - Chunk header size`]
     
     ex) `0x601048 - 0x10 - 0x6024A0 - 0x10 = 0xffffffffffffeb88`
@@ -144,3 +144,8 @@ int main(int argc, char* argv[]){
     return 0;
 }
 ```
+
+> **Reference**
+>
+> [Lazenca_House of Force (Korean)](https://www.lazenca.net/pages/viewpage.action?pageId=1148018)
+> [Dreamhack - House of Force](https://learn.dreamhack.io/16#71)
