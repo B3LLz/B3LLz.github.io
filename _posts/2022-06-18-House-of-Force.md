@@ -54,12 +54,12 @@ if ((unsigned long) (size) >= (unsigned long) (nb + MINSIZE))
 
 1. `malloc()`으로 힙 영역에 메모리를 할당한다.
     
-    ![hof1](/image/hof1.png)
+    ![hof1](/images/hof1.png)
     
 2. Top Chunk의 size 값을 `0xffffffff`(32bit)나  `0xffffffffffffffff`(64bit) 값으로 덮어쓴다.
     - 위에서 설명했던 것처럼`_int_malloc`에서 Top Chunk의 크기와 할당을 요청받은 크기를 비교하는 조건문을 참으로 만들어 힙 영역에 메모리를 할당할 수 있게 한다.
     
-    ![hof2](/image/hof2.png)
+    ![hof2](/images/hof2.png)
     
 3. 원하는 주소를 할당 받기 위해 아래의 값을 `malloc()` 인자로 전달한다.
     
@@ -69,12 +69,12 @@ if ((unsigned long) (size) >= (unsigned long) (nb + MINSIZE))
     
     - 계산된 값을 `malloc()`의 인자로 넣어주게 되면 인자로 넣어준 크기만큼 메모리를 할당하게 되는데 위에서 설명한 `chunk_at_offset` 매크로를 통해 Top Chunk의 주소가   `top chunk 주소 + 할당 요청 크기`가 된다.
     
-    ![hof3](/image/hof3.png)
+    ![hof3](/images/hof3.png)
     
 4. 그리고 다시 한 번 `malloc()`을 호출하면 원하는 주소를 반환한다.
     - 다시 한 번 `malloc()`을 해줌으로써 Target Address에 메모리가 할당된다.
     
-    ![hof4](/image/hof4.png)
+    ![hof4](/images/hof4.png)
     
 
 # Example
