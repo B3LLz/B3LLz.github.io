@@ -145,7 +145,7 @@ int main(int argc, char* argv[]){
 }
 ```
 
-> **Reference**
->
+**Reference**
 > [Lazenca_House of Force (Korean)](https://www.lazenca.net/pages/viewpage.action?pageId=1148018)
+>
 > [Dreamhack - House of Force](https://learn.dreamhack.io/16#71)
