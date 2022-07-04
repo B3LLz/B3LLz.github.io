@@ -1,11 +1,10 @@
-# Google CTF 2022 - APPNOTE.TXT
 ---
 layout: post
 title: "Google CTF 2022 - APPNOTE.TXT"
 author: "B3LLz"
 tags: write-up
 ---
-
+# Google CTF 2022 - APPNOTE.TXT
 
 # APPNOTE.TXT - 50pt (misc)
 
