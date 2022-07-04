@@ -4,13 +4,11 @@ title: "Google CTF 2022 - APPNOTE.TXT"
 author: "B3LLz"
 tags: write-up
 ---
-# Google CTF 2022 - APPNOTE.TXT
 
 # APPNOTE.TXT - 50pt (misc)
 
 **Every single archive manager unpacks this to a different file...**
 
----
 
 주어진 파일은 `dump.zip`이며 압축해제를 할 시 하나의 텍스트 파일만이 나오는 상태이다.
 
