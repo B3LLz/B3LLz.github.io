@@ -14,11 +14,11 @@ tags: write-up
 
 주어진 파일은 `dump.zip`이며 압축해제를 할 시 하나의 텍스트 파일만이 나오는 상태이다.
 
-![Untitled](Google%20CTF%202022%20-%20APPNOTE%20TXT%20e8062db1cb0a4362bd77ba7c72b2a06a/Untitled.png)
+![Untitled](/images/appnote1.png)
 
 # PKZIP 구조 및 압축해제 프로세스
 
-![Untitled](Google%20CTF%202022%20-%20APPNOTE%20TXT%20e8062db1cb0a4362bd77ba7c72b2a06a/Untitled%201.png)
+![Untitled](/images/appnote2.png)
 
 ZIP 파일의 압축해제 프로세스는 다음과 같다.
 
@@ -35,7 +35,7 @@ ZIP 파일의 압축해제 프로세스는 다음과 같다.
 
 ZIP 파일을 압축해제 할 때 처음으로 접근하는 곳이며 Signature는 `50 4B 05 06`이다.
 
-![Untitled](Google%20CTF%202022%20-%20APPNOTE%20TXT%20e8062db1cb0a4362bd77ba7c72b2a06a/Untitled%202.png)
+![Untitled](/images/appnote3.png)
 
 박스 안에 있는 부분이 `Central Directory`의 시작 주소를 가리킨다.
 
@@ -43,7 +43,7 @@ ZIP 파일을 압축해제 할 때 처음으로 접근하는 곳이며 Signature
 
 `End of Central Directory`에서 읽은 정보를 통해 접근되어지는 주소이며 Signature는 `50 4B 01 02`이다.
 
-![Untitled](Google%20CTF%202022%20-%20APPNOTE%20TXT%20e8062db1cb0a4362bd77ba7c72b2a06a/Untitled%203.png)
+![Untitled](/images/appnote4.png)
 
 박스 안에 있는 값은 `Local Header`의 주소를 나타낸다. `Local Header`에는 압축해제 하고자 하는 파일 정보가 들어 있다.
 
@@ -51,7 +51,7 @@ ZIP 파일을 압축해제 할 때 처음으로 접근하는 곳이며 Signature
 
 압축해제 하고자 하는 실제 파일의 정보가 들어있는 부분이며 Signature는 `50 4B 03 04`이다.
 
-![Untitled](Google%20CTF%202022%20-%20APPNOTE%20TXT%20e8062db1cb0a4362bd77ba7c72b2a06a/Untitled%204.png)
+![Untitled](/images/appnote5.png)
 
 `Local Header`를 보면 파일의 내용과 파일 제목을 볼 수 있다.
 
@@ -59,7 +59,7 @@ ZIP 파일을 압축해제 할 때 처음으로 접근하는 곳이며 Signature
 
 주어진 zip 파일을 보면 `End of Central Directory`에 해당하는 Signature가 여러개 존재하는 것을 확인할 수 있다. 여러개의 `End of Central Diretory`의 정보를 통해 이에 해당하는 파일의 내용을 알 수 있다.
 
-![Untitled](Google%20CTF%202022%20-%20APPNOTE%20TXT%20e8062db1cb0a4362bd77ba7c72b2a06a/Untitled%205.png)
+![Untitled](/images/appnote6.png)
 
 ## parsing code
 
