@@ -5,13 +5,13 @@ permalink: /writeups/
 ---
 
 <div class="catalogue">
-  {% for post in site.writeups %}
+  {% for post in site.posts %}
     {% if post.sticky %}
       {% include catalogue_item.html sticky='true' %}
     {% endif %}
   {% endfor %}
 
-  {% for post in paginator.writeups %}
+  {% for post in paginator.posts %}
     {% include catalogue_item.html %}
   {% endfor %}
 </div>
