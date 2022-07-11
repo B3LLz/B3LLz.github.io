@@ -1,5 +1,5 @@
 ---
-layout: writeup
+layout: post
 title: "Google CTF 2022 - APPNOTE.TXT"
 author: "B3LLz"
 tags: write-up
